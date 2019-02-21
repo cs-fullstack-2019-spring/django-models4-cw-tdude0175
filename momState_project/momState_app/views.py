@@ -47,6 +47,6 @@ def citizentoState(request):
     namePrint = ''
     for eachPerson in citizenList:
         namePrint+= f' person: {eachPerson} <br>'
-        for state in State.objects.filter(child__Name=State.Name):
+        for state in State.objects.filter(citizen__firstName=eachPerson.firstName):
             namePrint += f'state: {state} <br>'
     return HttpResponse(namePrint)

@@ -8,5 +8,6 @@ urlpatterns = \
         path('children/' , views.childList , name = 'childList'),
         path('moms/' , views.momList,name = 'momList'),
         path('newchild/',views.newChildren, name = 'newChildren'),
-        path('deletemom/',views.deleteMom , name = 'deleteMom')
+        path('deletemom/',views.deleteMom , name = 'deleteMom'),
+        path('citizen/', views.citizentoState , name = 'citizenList')
     ]

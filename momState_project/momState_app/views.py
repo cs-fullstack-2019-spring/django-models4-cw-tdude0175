@@ -41,4 +41,12 @@ def deleteMom(request):
     momList[0].delete()
     return HttpResponse("big mana terminated")
 
-
+# same way to itterate through child and mom
+def citizentoState(request):
+    citizenList = Citizen.objects.all()
+    namePrint = ''
+    for eachPerson in citizenList:
+        namePrint+= f' person: {eachPerson} <br>'
+        for state in State.objects.filter(child__Name=State.Name):
+            namePrint += f'state: {state} <br>'
+    return HttpResponse(namePrint)
